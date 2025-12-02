@@ -84,14 +84,14 @@ class WindowManagerApp(ctk.CTk):
         self.title_entry.insert(0, "MetaBomb 2.0")
 
         # Tolerance Slider
-        self.tol_label_title = ctk.CTkLabel(self.settings_frame, text="Độ Nhạy Phát Hiện (Tolerance):", 
+        self.tol_label_title = ctk.CTkLabel(self.settings_frame, text="Sai số cho phép (Tolerance):", 
                                           font=ctk.CTkFont(size=14, weight="bold"))
         self.tol_label_title.pack(anchor="w", pady=(0, 5))
         
         self.tol_frame = ctk.CTkFrame(self.settings_frame, fg_color="transparent")
         self.tol_frame.pack(fill="x")
         
-        self.tolerance_slider = ctk.CTkSlider(self.tol_frame, from_=5, to=50, number_of_steps=45, 
+        self.tolerance_slider = ctk.CTkSlider(self.tol_frame, from_=0, to=50, number_of_steps=50, 
                                             command=self.update_tolerance_label)
         self.tolerance_slider.pack(side="left", fill="x", expand=True, padx=(0, 20))
         self.tolerance_slider.set(10)
